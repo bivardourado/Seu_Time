@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Seu Time</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div id="times-container">
+        <!-- As imagens dos times serão carregadas aqui -->
+    </div>
+    <div class="p-container">
+        <div id="pergunta-container">
+            <h1>Vou descobrir qual time você torce!</h1>
+            <p id="pergunta">Carregando perguntas...</p>
+            <div class="buttons">
+                <button id="sim" class="btn">Sim</button>
+                <button id="nao" class="btn">Não</button>
+            </div>
+        </div>
+        <div id="resultado-container" class="hidden">
+            <p id="resultado"></p>
+            <img id="bandeira" src="" alt="Bandeira do time" class="hidden" />
+            <p></p>
+            <button id="recomecar" class="btn">Recomeçar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé com links para LinkedIn, GitHub e e-mail -->
+    <footer>
+        <div class="footer-container">
+            <a href="https://www.linkedin.com/in/bivardourado" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+               
+            </a>
+            <a href="https://github.com/bivardourado" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <h4> GitHub</h4>
+            </a>
+            <a href="mailto:bivardourado@gmail.com" aria-label="E-mail">
+                <i class="fas fa-envelope"></i>
+                <h4> E-mail </h4>
+            </a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
