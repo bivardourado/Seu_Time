@@ -22,7 +22,7 @@ const perguntas = [
    
     { pergunta: "Seu time ganhou a Libertadores nos últimos 10 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
     { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians" ], nao: [] },
-    { pergunta: "Seu time já foi rebaixado?", sim: [ "Fluminense","Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo","Atlético Mineiro", "Fortaleza"], nao: [] },
+    { pergunta: "Seu time já foi rebaixado?", sim: ["Bahia", "Fluminense","Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo","Atlético Mineiro", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
     { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem um estádio próprio?", sim: ["Palmeiras", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama",  "Grêmio", "Internacional"], nao: [] },
