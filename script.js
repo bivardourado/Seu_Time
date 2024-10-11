@@ -29,9 +29,10 @@ const perguntas = [
     { pergunta: "Seu time tem um estádio próprio?", sim: ["Palmeiras", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama",  "Grêmio", "Botafogo","Internacional"], nao: [] },
     { pergunta: "Seu time é de minas?", sim: ["Atlético Mineiro","Cruzeiro"], nao: [] },
     { pergunta: "Seu time é conhecido por revelar muitos jogadores da base?", sim: [ "São Paulo", "Fluminense"], nao: [] },
+    { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
     { pergunta: "Seu time está na primeira divisão atualmente?", sim: ["Flamengo", "Palmeiras", "São Paulo", "Corinthians",  "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama", "Fluminense", "Botafogo", "Bahia", "Fortaleza", ], nao: [] },
     { pergunta: "Seu time tem a maior torcida do Brasil?", sim: ["Flamengo"], nao: [] },
-    { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
+    
 ];
 
 // Elementos da página
