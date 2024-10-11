@@ -1,4 +1,4 @@
-# Jogo de Adivinhação do Time de Futebol
+# Jogo de Adivinhação do Time de Futebol !
 
 Este projeto é um jogo interativo que tenta adivinhar qual time de futebol da primeira divisão brasileira o usuário está pensando, com base em uma série de perguntas. As imagens dos times são exibidas na parte superior da página, e o jogo utiliza uma série de perguntas para filtrar as opções e chegar a um resultado.
 
