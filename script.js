@@ -3,9 +3,9 @@ const times = [
     "Flamengo", "Palmeiras", "São Paulo", "Corinthians", 
     "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama",
     "Fluminense", "Botafogo", "Bahia", "Fortaleza",
-     
 ];
 const timesContainer = document.getElementById('times-container');
+
 // Função para carregar as imagens dos times na parte superior da página
 function carregarImagensDosTimes() {
     times.forEach(time => {
@@ -17,23 +17,21 @@ function carregarImagensDosTimes() {
 }
 
 carregarImagensDosTimes();
+
 // Perguntas e regras de decisão
 const perguntas = [
-   
     { pergunta: "Seu time ganhou a Libertadores nos últimos 10 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
-    { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians" ], nao: [] },
-    { pergunta: "Seu time já foi rebaixado?", sim: [ "Bahia","Fluminense","Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo","Atlético Mineiro", "Fortaleza"], nao: [] },
+    { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians"], nao: [] },
+    { pergunta: "Seu time já foi rebaixado?", sim: ["Bahia", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
     { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio", "Fortaleza"], nao: [] },
     { pergunta: "Seu time é do Rio de Janeiro?", sim: ["Flamengo", "Fluminense", "Vasco da Gama", "Botafogo"], nao: [] },
-    { pergunta: "Seu time tem um estádio próprio?", sim: ["Palmeiras", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama",  "Grêmio", "Botafogo","Internacional"], nao: [] },
-    { pergunta: "Seu time é de minas?", sim: ["Atlético Mineiro","Cruzeiro"], nao: [] },
+    { pergunta: "Seu time tem um estádio próprio?", sim: ["Palmeiras", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo", "Internacional"], nao: [] },
+    { pergunta: "Seu time é de Minas?", sim: ["Atlético Mineiro", "Cruzeiro"], nao: [] },
     { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
-    { pergunta: "Seu time é conhecido por revelar muitos jogadores da base?", sim: [ "São Paulo", "Fluminense"], nao: [] },
-    { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
-    { pergunta: "Seu time está na primeira divisão atualmente?", sim: ["Flamengo", "Palmeiras", "São Paulo", "Corinthians",  "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama", "Fluminense", "Botafogo", "Bahia", "Fortaleza", ], nao: [] },
+    { pergunta: "Seu time é conhecido por revelar muitos jogadores da base?", sim: ["São Paulo", "Fluminense"], nao: [] },
+    { pergunta: "Seu time está na primeira divisão atualmente?", sim: ["Flamengo", "Palmeiras", "São Paulo", "Corinthians", "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama", "Fluminense", "Botafogo", "Bahia", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem a maior torcida do Brasil?", sim: ["Flamengo"], nao: [] },
-    
 ];
 
 // Elementos da página
@@ -74,10 +72,6 @@ function responder(resposta) {
 }
 
 // Função para exibir o resultado e a bandeira
-// Função para exibir o resultado e a bandeira
-// Função para exibir o resultado e a bandeira
-// Função para exibir o resultado e a bandeira
-// Função para exibir o resultado e a bandeira
 function exibirResultado() {
     if (timesFiltrados.length === 1) {
         const time = timesFiltrados[0];
@@ -116,7 +110,31 @@ function exibirResultado() {
     // Evento para o ícone "Sim"
     iconeSim.addEventListener("click", () => {
         resultadoEl.textContent = "Então faça um Pix de R$ 5,00 para me estimular a criar novos projetos. Meu Pix é: 87 9 9969 5655.";
-        bandeiraEl.classList.add("hidden");
+        
+       // Adicionar opção de compartilhar o site
+const compartilharEl = document.createElement("button");
+compartilharEl.id = "compartilhar"; // Adicione o ID para aplicar os estilos
+compartilharEl.textContent = "Compartilhe o site, por favor";
+compartilharEl.classList.remove("hidden"); // Remova a classe "hidden" se você a estiver usando para ocultar
+
+compartilharEl.addEventListener("click", () => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Adivinhe seu time!',
+            text: 'Descubra qual é o seu time do coração!',
+            url: 'https://bivardourado.github.io/Seu_Time/',
+        }).then(() => {
+            console.log('Compartilhado com sucesso!');
+        }).catch((error) => {
+            console.error('Erro ao compartilhar:', error);
+        });
+    } else {
+        alert('Seu navegador não suporta compartilhamento.');
+    }
+});
+
+resultadoContainer.appendChild(compartilharEl);
+
         perguntaFinal.remove();
         thumbContainer.remove();
     });
@@ -133,15 +151,7 @@ function exibirResultado() {
 // Inicia o jogo
 fazerPergunta();
 
-
-// Inicia o jogo
-fazerPergunta();
-
-
-// Inicia o jogo
-fazerPergunta();
-
-
+// Função para reiniciar o jogo
 // Função para reiniciar o jogo
 function reiniciarJogo() {
     timesFiltrados = [...times];
@@ -151,13 +161,18 @@ function reiniciarJogo() {
     bandeiraEl.classList.add("hidden");
     resultadoContainer.classList.add("hidden");
     perguntaContainer.classList.remove("hidden");
+
+    // Remova o botão de compartilhar, se existir
+    const compartilharEl = document.getElementById("compartilhar");
+    if (compartilharEl) {
+        compartilharEl.remove(); // Remove o botão do DOM
+    }
+
     fazerPergunta();
 }
+
 
 // Adiciona eventos aos botões
 botaoSim.addEventListener("click", () => responder('sim'));
 botaoNao.addEventListener("click", () => responder('nao'));
 botaoRecomecar.addEventListener("click", reiniciarJogo);
-
-// Inicia o jogo
-fazerPergunta();
