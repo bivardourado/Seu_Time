@@ -1,7 +1,7 @@
 // Lista dos times da primeira divisão (nomes das imagens devem ser iguais aos nomes dos times)
 const times = [
     "Flamengo", "Palmeiras", "São Paulo", "Corinthians", 
-    "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama",
+    "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Athletico-Paranaense", "Vasco da Gama",
     "Fluminense", "Botafogo", "Bahia", "Fortaleza",
 ];
 const timesContainer = document.getElementById('times-container');
@@ -22,13 +22,14 @@ carregarImagensDosTimes();
 const perguntas = [
     { pergunta: "Seu time ganhou a Libertadores nos últimos 10 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
     { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians"], nao: [] },
-    { pergunta: "Seu time já foi rebaixado?", sim: ["Bahia", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza"], nao: [] },
+    { pergunta: "Seu time já foi rebaixado?", sim: ["Bahia","Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
     { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio", "Fortaleza"], nao: [] },
     { pergunta: "Seu time é do Rio de Janeiro?", sim: ["Flamengo", "Fluminense", "Vasco da Gama", "Botafogo"], nao: [] },
-    { pergunta: "Seu time tem um estádio próprio?", sim: ["Palmeiras", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo", "Internacional"], nao: [] },
+    { pergunta: "Seu time tem um estádio próprio?", sim: ["Palmeiras","Athletico-Paranaense", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo", "Internacional"], nao: [] },
     { pergunta: "Seu time é de Minas?", sim: ["Atlético Mineiro", "Cruzeiro"], nao: [] },
     { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
+    { pergunta: "Seu time completou 100 em 2024 ?", sim: ["Athletico-Paranaense"], nao: [] },
     { pergunta: "Seu time é conhecido por revelar muitos jogadores da base?", sim: ["São Paulo", "Fluminense"], nao: [] },
     { pergunta: "Seu time está na primeira divisão atualmente?", sim: ["Flamengo", "Palmeiras", "São Paulo", "Corinthians", "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama", "Fluminense", "Botafogo", "Bahia", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem a maior torcida do Brasil?", sim: ["Flamengo"], nao: [] },
