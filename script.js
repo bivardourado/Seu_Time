@@ -30,8 +30,10 @@ const perguntas = [
     { pergunta: "Seu time é de minas?", sim: ["Atlético Mineiro","Cruzeiro"], nao: [] },
     { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
     { pergunta: "Seu time é conhecido por revelar muitos jogadores da base?", sim: [ "São Paulo", "Fluminense"], nao: [] },
+    { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
     { pergunta: "Seu time está na primeira divisão atualmente?", sim: ["Flamengo", "Palmeiras", "São Paulo", "Corinthians",  "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Vasco da Gama", "Fluminense", "Botafogo", "Bahia", "Fortaleza", ], nao: [] },
     { pergunta: "Seu time tem a maior torcida do Brasil?", sim: ["Flamengo"], nao: [] },
+    
 ];
 
 // Elementos da página
@@ -72,6 +74,10 @@ function responder(resposta) {
 }
 
 // Função para exibir o resultado e a bandeira
+// Função para exibir o resultado e a bandeira
+// Função para exibir o resultado e a bandeira
+// Função para exibir o resultado e a bandeira
+// Função para exibir o resultado e a bandeira
 function exibirResultado() {
     if (timesFiltrados.length === 1) {
         const time = timesFiltrados[0];
@@ -87,7 +93,54 @@ function exibirResultado() {
     }
     perguntaContainer.classList.add("hidden");
     resultadoContainer.classList.remove("hidden");
+
+    // Adicionar a lógica para a pergunta final (se gostou do jogo)
+    const perguntaFinal = document.createElement("p");
+    perguntaFinal.textContent = "Gostou do joguinho? Responda!";
+    
+    const thumbContainer = document.createElement("div");
+    thumbContainer.classList.add("thumb-container");
+
+    const iconeSim = document.createElement("i");
+    iconeSim.classList.add("fas", "fa-thumbs-up", "thumb-icon", "positivo"); // Ícone de polegar para cima (positivo)
+    
+    const iconeNao = document.createElement("i");
+    iconeNao.classList.add("fas", "fa-thumbs-down", "thumb-icon", "negativo"); // Ícone de polegar para baixo (negativo)
+
+    thumbContainer.appendChild(iconeSim);
+    thumbContainer.appendChild(iconeNao);
+
+    resultadoContainer.appendChild(perguntaFinal);
+    resultadoContainer.appendChild(thumbContainer);
+
+    // Evento para o ícone "Sim"
+    iconeSim.addEventListener("click", () => {
+        resultadoEl.textContent = "Então faça um Pix de R$ 5,00 para me estimular a criar novos projetos. Meu Pix é: 87 9 9969 5655.";
+        bandeiraEl.classList.add("hidden");
+        perguntaFinal.remove();
+        thumbContainer.remove();
+    });
+
+    // Evento para o ícone "Não"
+    iconeNao.addEventListener("click", () => {
+        resultadoEl.textContent = "Que pena que você não gostou!";
+        bandeiraEl.classList.add("hidden");
+        perguntaFinal.remove();
+        thumbContainer.remove();
+    });
 }
+
+// Inicia o jogo
+fazerPergunta();
+
+
+// Inicia o jogo
+fazerPergunta();
+
+
+// Inicia o jogo
+fazerPergunta();
+
 
 // Função para reiniciar o jogo
 function reiniciarJogo() {

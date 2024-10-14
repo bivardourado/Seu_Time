@@ -126,23 +126,77 @@ h1 {
 }
 
 /* Estilos para o rodapé */
-footer {
-    background-color: #e91414; /* Cor de fundo */
-    padding: 10px; /* Espaçamento */
-    text-align: center; /* Centraliza o conteúdo */
-    width: 100%; /* Para ocupar toda a largura */
-    z-index: 10; /* Para garantir que apareça acima de outros elementos */
-    margin-top: auto; /* Para empurrar o rodapé para baixo */
-    position: relative; /* Ajuste a posição se necessário */
+
+
+
+.thumb-icon {
+    font-size: 4rem; /* Aumenta o tamanho dos ícones */
+    margin: 20px; /* Espaçamento entre os ícones */
+    cursor: pointer;
+    color: #007bff; /* Cor padrão */
+    transition: transform 0.2s, color 0.2s; /* Adiciona uma animação suave */
 }
 
-.footer-container i {
-    color: #b90606; /* Altere para a cor desejada */
-    margin: 0 10px; /* Espaçamento entre os ícones */
-    font-size: 24px; /* Tamanho do ícone */
-   
+.thumb-icon:hover {
+    color: #007bff; /* Cor ao passar o mouse */
+    transform: scale(1.2); /* Aumenta levemente o tamanho ao passar o mouse */
+}
+
+#resultado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resultado-container p {
+    margin-bottom: 20px; /* Espaço entre o texto do resultado e os ícones */
+}
+
+.thumb-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaçamento maior entre os ícones */
+}
+.footer-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha os ícones à direita */
+    gap: 20px; /* Espaçamento entre os ícones */
+    padding: 20px;
+}
+
+footer {
+    width: 100%; /* Faz o rodapé ocupar toda a largura da página */
+    position: fixed; /* Mantém o rodapé fixo na parte inferior */
+    bottom: 0;
+    right: 0;
+    background-color: #f1f1f1; /* Cor de fundo opcional para o rodapé */
+}
+
+.footer-container a {
+    color: #333; /* Cor padrão dos ícones */
+    font-size: 2rem; /* Tamanho dos ícones */
+    transition: color 0.3s ease;
 }
 
 .footer-container a:hover {
-    color: #007bff; /* Altere a cor ao passar o mouse */
+    color: #0077b5; /* Cor ao passar o mouse, pode ser customizado */
+}
+/* Ícones de polegar */
+/* Ícones de polegar */
+.thumb-icon {
+    font-size: 4rem;
+    margin: 20px;
+    cursor: pointer;
+    color: #007bff; /* Cor padrão azul */
+    transition: transform 0.2s, color 0.2s; /* Adiciona uma animação suave */
+}
+
+/* Ícone de polegar para cima (positivo) */
+.thumb-icon.positivo:hover {
+    color: #28a745; /* Verde ao passar o mouse */
+}
+
+/* Ícone de polegar para baixo (negativo) */
+.thumb-icon.negativo:hover {
+    color: #dc3545; /* Vermelho ao passar o mouse */
 }
