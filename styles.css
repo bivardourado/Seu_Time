@@ -10,10 +10,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f9fbfd;
     display: flex;
-    flex-direction: column; /* Adicionado */
-    min-height: 100vh; /* Alterado para min-height */
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 60px; /* Espaço para o rodapé */
 }
-
 
 /* Contêiner principal */
 .p-container {
@@ -23,8 +23,8 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 500px;
-    margin: 0 auto; /* Centraliza o contêiner */
-    flex: 1; /* Permite que o contêiner principal expanda */
+    margin: 20px auto; /* Centraliza o contêiner com margem superior e inferior */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,10 +33,11 @@ body {
 h1 {
     margin-bottom: 20px;
     color: #333;
+    font-size: 2rem;
 }
 
 #pergunta {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -49,7 +50,7 @@ h1 {
 
 .btn {
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -75,17 +76,18 @@ h1 {
 }
 
 #resultado {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: center;
 }
 
-#recomecar {
+#recomecar, #compartilhar {
     background-color: #007bff;
     color: #fff;
+    margin-top: 10px;
 }
 
-#recomecar:hover {
+#recomecar:hover, #compartilhar:hover {
     background-color: #0069d9;
 }
 
@@ -113,7 +115,7 @@ h1 {
 }
 
 #times-container img:hover {
-    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.2);
 }
 
 #pergunta-container {
@@ -122,95 +124,147 @@ h1 {
 }
 
 #resultado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-top: 20px;
 }
 
-/* Estilos para o rodapé */
-
-
-
-.thumb-icon {
-    font-size: 4rem; /* Aumenta o tamanho dos ícones */
-    margin: 20px; /* Espaçamento entre os ícones */
-    cursor: pointer;
-    color: #007bff; /* Cor padrão */
-    transition: transform 0.2s, color 0.2s; /* Adiciona uma animação suave */
-}
-
-.thumb-icon:hover {
-    color: #007bff; /* Cor ao passar o mouse */
-    transform: scale(1.2); /* Aumenta levemente o tamanho ao passar o mouse */
-}
-
-#resultado-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #resultado-container p {
-    margin-bottom: 20px; /* Espaço entre o texto do resultado e os ícones */
+    margin-bottom: 20px;
 }
 
-.thumb-container {
-    display: flex;
-    justify-content: center;
-    gap: 50px; /* Espaçamento maior entre os ícones */
-}
+/* Estilos para o rodapé */
+/* Estilos para o rodapé */
 .footer-container {
     display: flex;
     justify-content: flex-end; /* Alinha os ícones à direita */
-    gap: 20px; /* Espaçamento entre os ícones */
-    padding: 20px;
+    gap: 20px;
+    padding: 10px; /* Diminui o espaço do rodapé */
 }
 
 footer {
-    width: 100%; /* Faz o rodapé ocupar toda a largura da página */
-    position: fixed; /* Mantém o rodapé fixo na parte inferior */
+    width: 100%;
+    position: fixed;
     bottom: 0;
-    right: 0;
-    background-color: #f1f1f1; /* Cor de fundo opcional para o rodapé */
+    left: 0;
+    background-color: #f1f1f1;
 }
 
+/* Ícones de redes sociais */
 .footer-container a {
-    color: #333; /* Cor padrão dos ícones */
-    font-size: 2rem; /* Tamanho dos ícones */
+    color: #333;
+    font-size: 2rem;
     transition: color 0.3s ease;
 }
 
 .footer-container a:hover {
-    color: #0077b5; /* Cor ao passar o mouse, pode ser customizado */
+    color: #0077b5; /* Cor ao passar o mouse */
 }
-/* Ícones de polegar */
 /* Ícones de polegar */
 .thumb-icon {
-    font-size: 4rem;
+    font-size: 2rem;
     margin: 20px;
     cursor: pointer;
-    color: #007bff; /* Cor padrão azul */
-    transition: transform 0.2s, color 0.2s; /* Adiciona uma animação suave */
+    color: #007bff;
+    transition: transform 0.2s, color 0.2s;
 }
 
-/* Ícone de polegar para cima (positivo) */
+.thumb-icon:hover {
+    transform: scale(1.2);
+}
+
 .thumb-icon.positivo:hover {
-    color: #28a745; /* Verde ao passar o mouse */
+    color: #28a745;
 }
 
-/* Ícone de polegar para baixo (negativo) */
 .thumb-icon.negativo:hover {
-    color: #dc3545; /* Vermelho ao passar o mouse */
+    color: #dc3545;
 }
+
+/* Botão Compartilhar */
 #compartilhar {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Cor verde */
-    color: white; /* Texto branco */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em forma de mão */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 #compartilhar:hover {
-    background-color: #45a049; /* Tom mais escuro ao passar o mouse */
+    background-color: #45a049;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .p-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    .footer-container {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .thumb-icon {
+        font-size: 3rem;
+        margin: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #pergunta {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+
+    #times-container img {
+        width: 40px;
+        margin: 5px;
+    }
+    
+    .thumb-container {
+        gap: 20px;
+    }
+
+    .thumb-icon {
+        font-size: 2.5rem;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    #pergunta {
+        font-size: 1rem;
+    }
+
+    #bandeira {
+        max-width: 80px;
+    }
 }
