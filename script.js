@@ -20,7 +20,7 @@ carregarImagensDosTimes();
 
 // Perguntas e regras de decisão
 const perguntas = [
-    { pergunta: "Seu time ganhou a Libertadores nos últimos 05 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
+    { pergunta: "Seu time ganhou a Libertadores nos últimos  5 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
     { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians"], nao: [] },
     { pergunta: "Seu time já foi rebaixado?", sim: ["Bahia","Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza"], nao: [] },
     { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
