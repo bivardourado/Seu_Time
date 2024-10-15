@@ -111,7 +111,8 @@ function exibirResultado() {
     // Evento para o ícone "Sim"
     iconeSim.addEventListener("click", () => {
         resultadoEl.textContent = "Então faça um Pix de R$ 5,00 para me estimular a criar novos projetos. Meu Pix é: 87 9 9969 5655.";
-        
+          // Mostrar o botão "Recomeçar"
+          botaoRecomecar.classList.remove("hidden");
        // Adicionar opção de compartilhar o site
 const compartilharEl = document.createElement("button");
 compartilharEl.id = "compartilhar"; // Adicione o ID para aplicar os estilos
@@ -144,6 +145,8 @@ resultadoContainer.appendChild(compartilharEl);
     iconeNao.addEventListener("click", () => {
         resultadoEl.textContent = "Que pena que você não gostou!";
         bandeiraEl.classList.add("hidden");
+          // Mostrar o botão "Recomeçar"
+          botaoRecomecar.classList.remove("hidden");
         perguntaFinal.remove();
         thumbContainer.remove();
     });
@@ -151,9 +154,11 @@ resultadoContainer.appendChild(compartilharEl);
 
 // Inicia o jogo
 fazerPergunta();
+ // Esconder o botão de recomeçar
+ botaoRecomecar.classList.add("hidden"); // Adicione a classe "hidden" novamente
 
 // Função para reiniciar o jogo
-// Função para reiniciar o jogo
+
 function reiniciarJogo() {
     timesFiltrados = [...times];
     contadorPerguntas = 0;
@@ -168,10 +173,9 @@ function reiniciarJogo() {
     if (compartilharEl) {
         compartilharEl.remove(); // Remove o botão do DOM
     }
-
-    fazerPergunta();
+    botaoRecomecar.classList.add("hidden");
+    location.reload();
 }
-
 
 // Adiciona eventos aos botões
 botaoSim.addEventListener("click", () => responder('sim'));
