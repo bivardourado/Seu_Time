@@ -1,9 +1,4 @@
 /* Reset básico */
-
-body, html {
-    overflow-x: hidden; /* Evitar rolagem horizontal no documento */
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -11,28 +6,6 @@ body, html {
 }
 
 /* Estilos da página */
-
-header{
-    background-color: #218838;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-   
-    border-bottom: 1px solid #ccc; /* Borda inferior */
-    position: fixed; /* Fixa o cabeçalho no topo */
-    top: 0; /* Coloca no topo */
-    left: 0; /* Alinha à esquerda */
-    right: 0; /* Alinha à direita */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-   
-
-}
-.header-link {
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: white; /* Se desejar, adicione uma cor ao texto do link */
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f9fbfd;
@@ -45,22 +18,6 @@ body {
 /* Contêiner principal */
 .p-container {
     background: #f6f8f7;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto; /* Centraliza o contêiner com margem superior e inferior */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Faz o carrossel ocupar 100% da largura */
-    max-width: 500px; /* Se desejar, pode definir uma largura máxima */
-    margin: 20px auto; /* Centraliza o carrossel */
-}
-.publi {
-    background: #1406df;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -71,8 +28,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FFFFFF;
 }
+
 h1 {
     margin-bottom: 20px;
     color: #333;
@@ -103,12 +60,10 @@ h1 {
 #sim {
     background-color: #28a745;
     color: #fff;
-    margin-top: 10px; /* Ajuste este valor conforme necessário */
 }
 
 #sim:hover {
     background-color: #218838;
-
 }
 
 #nao {
@@ -124,16 +79,6 @@ h1 {
     font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: center;
-}
-
-.thumb-container {
-    font-size: 2rem;
-    margin: 10px;
-    cursor: pointer;
-    color: #007bff;
-    transition: transform 0.2s, color 0.2s;
-    /* Adicione a linha abaixo para subir os ícones */
-    margin-top: 0px; /* Ajuste este valor conforme necessário */
 }
 
 #recomecar, #compartilhar {
@@ -158,7 +103,7 @@ h1 {
 #times-container {
     display: flex;
     justify-content: center;
-   
+    flex-wrap: wrap;
     margin: 20px 0;
 }
 
@@ -190,38 +135,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Estilos para o carrossel de times */
-.swiper-container .swiper-pagination-progressbar {
-    display: none; /* Esconde a barra de progresso */
-}
-.swiper-container {
-    width: 100%;
-    height: 120px;
-    margin: 40px 0;
-}
-
-.swiper-slide {
-    
-    justify-content: center;
-    
-}
-
-.swiper-slide img {
-    width: 80px;
-    height: auto;
-    transition: transform 0.3s;
-}
-
-.swiper-slide img:hover {
-    transform: scale(1.2);
-}
-
+/* Estilos para o rodapé */
 /* Estilos para o rodapé */
 .footer-container {
     display: flex;
     justify-content: flex-end; /* Alinha os ícones à direita */
     gap: 20px;
-    padding: 0px; /* Diminui o espaço do rodapé */
+    padding: 10px; /* Diminui o espaço do rodapé */
 }
 
 footer {
@@ -279,22 +199,52 @@ footer {
 
 
 
+
+
+/* Carrossel */
+.swiper-container {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    position: relative; /* Para permitir que os botões se posicionem */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo dos botões de navegação */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #333; /* Cor das setas */
+    width: 40px; /* Largura das setas */
+    height: 40px; /* Altura das setas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo levemente transparente */
+    border-radius: 50%; /* Bordas arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para as setas */
+}
+
+/* Alinhamento das setas */
+.swiper-button-next {
+    right: 10px; /* Espaço à direita */
+    top: 50%; /* Centralizar verticalmente */
+    transform: translateY(-50%); /* Ajuste para centralizar */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Espaço à esquerda */
+    top: 50%; /* Centralizar verticalmente */
+    transform: translateY(-50%); /* Ajuste para centralizar */
+}
 /* Media Queries */
 
 /* Tablets */
 @media (max-width: 768px) {
-
-    .swiper-container {
-        height: 100px; /* Reduz a altura do carrossel para tablets */
-        padding: 0px;
-    }
-
-    .swiper-slide img {
-        width: 70px; /* Ajusta o tamanho da imagem para tablets */
-        padding: 10px;
-    }
-
-
     .p-container {
         padding: 20px;
         max-width: 90%;
@@ -326,16 +276,6 @@ footer {
 
 /* Smartphones */
 @media (max-width: 480px) {
-
-    .swiper-container {
-        height: 80px; /* Reduz a altura do carrossel para smartphones */
-        
-    }
-
-    .swiper-slide img {
-        width: 50px; /* Ajusta o tamanho da imagem para smartphones */
-        padding: 10px;
-    }
     .buttons {
         flex-direction: column;
         gap: 10px;
@@ -372,11 +312,3 @@ footer {
         max-width: 80px;
     }
 }
-
-
-
-
-
-
-
-

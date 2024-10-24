@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descubra Seu Time!</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Adicionando Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-    <div id="times-container">
-        <!-- As imagens dos times serão carregadas aqui -->
+    <header class="header">
+        <a href="https://bivardourado.github.io/mente/" class="header-link">
+            Projeto "Mente"
+        </a>
+    </header>
+    
+
+  <!-- Carrossel de times -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+    
+</div>
+ <div class="content">
+    <div class="publi">
+        Anuncie aqui!
     </div>
     <div class="p-container">
         <div id="pergunta-container">
@@ -24,15 +38,12 @@
         <div id="resultado-container" class="hidden">
             <p id="resultado"></p>
             <img id="bandeira" src="" alt="Bandeira do time" class="hidden" />
-            
-            
-            
             <p></p>
             <button id="recomecar" class="btn">Recomeçar</button>
         </div>
     </div>
-
-    <!-- Rodapé com links para LinkedIn, GitHub e e-mail -->
+    
+</div>
     <footer>
         <div class="footer-container">
             <a href="https://www.linkedin.com/in/bivardourado" target="_blank" aria-label="LinkedIn">
@@ -46,7 +57,8 @@
             </a>
         </div>
     </footer>
-    
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

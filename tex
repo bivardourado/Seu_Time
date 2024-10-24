@@ -1,0 +1,33 @@
+// Função para gerar dinamicamente os slides do carrossel
+function carregarEscudosDosTimes() {
+    const swiperWrapper = document.querySelector('.swiper-wrapper'); // Seleciona a área de slides
+
+    times.forEach(time => {
+        // Cria o elemento de slide para cada time
+        const slide = document.createElement('div');
+        slide.classList.add('swiper-slide');
+
+        // Cria a imagem do escudo do time
+        const img = document.createElement('img');
+        img.src = `imagens/${time.toLowerCase().replace(/\s+/g, '-')}.png`;
+        img.alt = `Escudo do ${time}`;
+
+        // Adiciona a imagem ao slide e o slide ao carrossel
+        slide.appendChild(img);
+        swiperWrapper.appendChild(slide);
+    });
+}
+
+function iniciarCarrossel() {
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 10,  // Exibe 10 times por vez
+        spaceBetween: 1,     // Espaçamento entre os escudos
+        loop: true,          // Ativa o loop contínuo
+        autoplay: {
+            delay: 0,        // Define que não há atraso entre os slides
+            disableOnInteraction: false, // Continua rodando após interação
+        },
+        speed: 5000,         // Define a velocidade de transição (tempo total para passar os slides)
+        loopedSlides: 20,    // Define o número de slides no loop (pode ser ajustado conforme necessário)
+    });
+}
