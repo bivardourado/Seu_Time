@@ -39,7 +39,7 @@ function iniciarCarrossel() {
             delay: 0,        // Define que não há atraso entre os slides
             disableOnInteraction: false, // Continua rodando após interação
         },
-        speed: 5000,         // Define a velocidade de transição (tempo total para passar os slides)
+        speed: 700,         // Define a velocidade de transição (tempo total para passar os slides)
         loopedSlides: 20,    // Define o número de slides no loop (pode ser ajustado conforme necessário)
     });
 }
@@ -55,7 +55,7 @@ window.onload = function() {
 const perguntas = [
     { pergunta: "Seu time ganhou a Libertadores nos últimos 5 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
     { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians", "Bragantino"], nao: [] },
-    { pergunta: "Seu time já foi rebaixado?", sim: [ "Vitoria", "Bahia", "Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza", "Criciúma", "Juventude", "Cuiabá", "Bragantino", "Atlético de Goiás"], nao: [] },
+    { pergunta: "Seu time já foi rebaixado?", sim: [ "Vitoria", "Bahia", "Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza", "Criciúma", "Juventude", "Bragantino", "Atlético de Goiás"], nao: [] },
     { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Cruzeiro","Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
     { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio", "Fortaleza"], nao: [] },
     { pergunta: "Seu time é do Rio de Janeiro?", sim: ["Flamengo", "Fluminense", "Vasco da Gama", "Botafogo"], nao: [] },
