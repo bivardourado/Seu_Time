@@ -3,7 +3,8 @@ const times = [
     "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", 
     "Athletico-Paranaense", "Vasco da Gama", "Fluminense", 
     "Botafogo", "Bahia", "Fortaleza", "Criciúma", "Bragantino", 
-    "Juventude", "Cuiabá", "Atlético de Goiás", "Vitoria"
+    "Juventude", "Cuiabá", "Atlético de Goiás", "Vitoria",
+    "Coritiba"
 ];
 
 const timesContainer = document.getElementById('times-container');
@@ -56,11 +57,11 @@ const perguntas = [
     { pergunta: "Seu time ganhou a Libertadores nos últimos 5 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
     { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians", "Bragantino"], nao: [] },
     { pergunta: "Sua mascote é um peixe", sim: ["Cuiabá" ], nao: [] },
-    { pergunta: "Seu time já foi rebaixado?", sim: [ "Vitoria", "Bahia", "Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza", "Criciúma", "Juventude", "Bragantino", "Atlético de Goiás"], nao: [] },
+    { pergunta: "Seu time já foi rebaixado?", sim: [ "Vitoria", "Bahia", "Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza", "Criciúma", "Juventude", "Bragantino", "Atlético de Goiás", "Coritiba"], nao: [] },
     { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Cruzeiro","Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
     { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio", "Fortaleza"], nao: [] },
     { pergunta: "Seu time é do Rio de Janeiro?", sim: ["Flamengo", "Fluminense", "Vasco da Gama", "Botafogo"], nao: [] },
-    { pergunta: "Seu time tem um estádio próprio?", sim: [ "Vitoria","Palmeiras","Cuiabá","Juventude","Atlético de Goiás", "Athletico-Paranaense", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo","Criciúma", "Internacional"], nao: [] },
+    { pergunta: "Seu time tem um estádio próprio?", sim: [ "Vitoria","Palmeiras","Cuiabá","Juventude","Atlético de Goiás", "Athletico-Paranaense", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo","Criciúma", "Internacional", "Coritiba"], nao: [] },
     { pergunta: "Seu time é de Minas?", sim: ["Atlético Mineiro", "Cruzeiro"], nao: [] },
     { pergunta: "Seu time é Baiano?", sim: ["Vitoria"], nao: [] },
     { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
@@ -69,7 +70,7 @@ const perguntas = [
     { pergunta: "Seu time tem a maior torcida do Brasil?", sim: ["Flamengo"], nao: [] },
     { pergunta: "Seu time é de Santa Catarina?", sim: ["Criciúma"], nao: [] },
     { pergunta: "Seu time tem um mascote que é um Bragantino?", sim: ["Bragantino"], nao: [] },
-    { pergunta: "Seu time é conhecido por suas cores verde e branco?", sim: ["Juventude"], nao: [] },
+    { pergunta: "Seu time é conhecido por suas cores verde e branco?", sim: ["Juventude", "Coritiba"], nao: [] },
     { pergunta: "É uma das maiores forças do Centro-Oeste", sim: ["Cuiabá", "Atlético de Goiás"], nao: [] },
 ];
 
