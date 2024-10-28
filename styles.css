@@ -142,6 +142,23 @@ h1 {
     margin-top: 10px;
 }
 
+
+.button-copiar-pix {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;              /* Cor do texto branca */
+    padding: 10px 20px;        /* Espaçamento interno */
+    border: none;              /* Remove borda */
+    border-radius: 5px;        /* Bordas arredondadas */
+    cursor: pointer;           /* Cursor de ponteiro */
+    font-size: 16px;           /* Tamanho do texto */
+    transition: background-color 0.3s; /* Transição suave */
+
+    /* Efeito de hover */
+}
+.button-copiar-pix:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+}
+
 #recomecar:hover, #compartilhar:hover {
     background-color: #0069d9;
 }
@@ -188,6 +205,25 @@ h1 {
 
 #resultado-container p {
     margin-bottom: 20px;
+}
+/* CSS */
+/* CSS */
+.pix-container {
+    display: flex;
+    flex-direction: column; /* Exibe os elementos na vertical */
+    align-items: center;    /* Centraliza o conteúdo no container */
+    gap: 10px;              /* Espaçamento entre o botão e a imagem */
+}
+
+.qr-code-image {
+    width: 150px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
+.qr-code-image {
+    width: 150px;      /* Define a largura da imagem */
+    height: auto;      /* Mantém a proporção da imagem */
+    margin-top: 10px;  /* Espaçamento superior para separar do botão */
 }
 
 /* Estilos para o carrossel de times */

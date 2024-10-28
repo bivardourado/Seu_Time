@@ -145,39 +145,80 @@ function exibirResultado() {
 
     resultadoContainer.appendChild(perguntaFinal);
     resultadoContainer.appendChild(thumbContainer);
+      
+  // Adicione o botão "Copiar Código do Pix" e a imagem do código Pix
+  const pixCode = '00020126580014BR.GOV.BCB.PIX0136f1179021-16fb-400f-a95c-e2d73180f77652040000530398654049.905802BR5925Paulo Bivar Dourado Barre6009SAO PAULO62140510nt4StWtUDk6304C750';
+  const pixImage = './imagens/qrcode.png'; // Substitua pelo caminho real da sua imagem
+  
+  iconeSim.addEventListener("click", () => {
+    // Atualizar o resultado com a mensagem para o Pix
+    resultadoEl.innerHTML = `Então faça um Pix para me estimular a criar novos projetos.`;
 
-    // Evento para o ícone "Sim"
-    iconeSim.addEventListener("click", () => {
-        resultadoEl.textContent = "Então faça um Pix de R$ 5,00 para me estimular a criar novos projetos. Meu Pix é: 87 9 9969 5655.";
-          // Mostrar o botão "Recomeçar"
-          botaoRecomecar.classList.remove("hidden");
-       // Adicionar opção de compartilhar o site
-const compartilharEl = document.createElement("button");
-compartilharEl.id = "compartilhar"; // Adicione o ID para aplicar os estilos
-compartilharEl.textContent = "Compartilhe o site, por favor";
-compartilharEl.classList.remove("hidden"); // Remova a classe "hidden" se você a estiver usando para ocultar
+    // Criar um container para o botão e a imagem
+    const pixContainer = document.createElement('div');
+    pixContainer.classList.add('pix-container'); // Adiciona uma classe para o CSS
 
-compartilharEl.addEventListener("click", () => {
-    if (navigator.share) {
-        navigator.share({
-            title: 'Adivinhe seu time!',
-            text: 'Descubra qual é o seu time do coração!',
-            url: 'https://bivardourado.github.io/Seu_Time/',
-        }).then(() => {
-            console.log('Compartilhado com sucesso!');
-        }).catch((error) => {
-            console.error('Erro ao compartilhar:', error);
+    // Criar o botão "Copiar Código do Pix"
+    const copiarButton = document.createElement('button');
+    copiarButton.textContent = "Copiar Código do Pix";
+    copiarButton.classList.add("button-copiar-pix");
+    copiarButton.onclick = function() {
+        navigator.clipboard.writeText(pixCode).then(() => {
+            alert('Código do Pix copiado para a área de transferência!');
+        }).catch(err => {
+            console.error('Erro ao copiar o código: ', err);
         });
-    } else {
-        alert('Seu navegador não suporta compartilhamento.');
-    }
-});
+    };
 
-resultadoContainer.appendChild(compartilharEl);
+    // Criar a imagem do QR Code
+    const imgPix = document.createElement('img');
+    imgPix.src = pixImage; // Caminho da imagem do QR Code
+    imgPix.alt = "Código Pix";
+    imgPix.classList.add("qr-code-image"); // Classe CSS para definir o tamanho e posicionamento
 
-        perguntaFinal.remove();
-        thumbContainer.remove();
+    // Adicionar o botão e a imagem ao container
+    pixContainer.appendChild(copiarButton);
+    pixContainer.appendChild(imgPix);
+
+    // Adicionar o container ao elemento de resultado
+    resultadoEl.appendChild(pixContainer);
+
+    // Esconder o escudo do time, se estiver visível
+    bandeiraEl.classList.add("hidden");
+
+    // Mostrar o botão "Recomeçar"
+    botaoRecomecar.classList.remove("hidden");
+
+    // Adicionar o botão de compartilhar
+    const compartilharEl = document.createElement("button");
+    compartilharEl.id = "compartilhar";
+    compartilharEl.textContent = "Compartilhe o site, por favor";
+    compartilharEl.classList.remove("hidden");
+
+    // Configurar a lógica de compartilhamento
+    compartilharEl.addEventListener("click", () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Adivinhe seu time!',
+                text: 'Descubra qual é o seu time do coração!',
+                url: 'https://bivardourado.github.io/Seu_Time/',
+            }).then(() => {
+                console.log('Compartilhado com sucesso!');
+            }).catch((error) => {
+                console.error('Erro ao compartilhar:', error);
+            });
+        } else {
+            alert('Seu navegador não suporta compartilhamento.');
+        }
     });
+
+    // Adicionar o botão de compartilhar ao container de resultados
+    resultadoContainer.appendChild(compartilharEl);
+
+    // Remover a pergunta final e os ícones de "Sim" e "Não"
+    perguntaFinal.remove();
+    thumbContainer.remove();
+});
 
     // Evento para o ícone "Não"
     iconeNao.addEventListener("click", () => {
