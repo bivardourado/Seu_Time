@@ -1,3 +1,4 @@
+// Lista dos times
 const times = [
     "Flamengo", "Palmeiras", "São Paulo", "Corinthians", 
     "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", 
@@ -6,49 +7,28 @@ const times = [
     "Juventude", "Cuiabá", "Atlético de Goiás", "Vitoria"
 ];
 
-const timesContainer = document.getElementById('times-container');
-
-// Função para gerar dinamicamente os slides do carrossel
-function carregarEscudosDosTimes() {
-    const swiperWrapper = document.querySelector('.swiper-wrapper'); // Seleciona a área de slides
-
-    times.forEach(time => {
-        // Cria o elemento de slide para cada time
-        const slide = document.createElement('div');
-        slide.classList.add('swiper-slide');
-
-        // Cria a imagem do escudo do time
-        const img = document.createElement('img');
-        img.src = `imagens/${time.toLowerCase().replace(/\s+/g, '-')}.png`;
-        img.alt = `Escudo do ${time}`;
-
-        // Adiciona a imagem ao slide e o slide ao carrossel
-        slide.appendChild(img);
-        swiperWrapper.appendChild(slide);
-    });
-}
-
-
-// Iniciar o carrossel Swiper
-function iniciarCarrossel() {
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 10,  // Exibe 10 times por vez
-        spaceBetween: 1,     // Espaçamento entre os escudos
-        loop: true,          // Ativa o loop contínuo
-        autoplay: {
-            delay: 0,        // Define que não há atraso entre os slides
-            disableOnInteraction: false, // Continua rodando após interação
-        },
-        speed: 700,         // Define a velocidade de transição (tempo total para passar os slides)
-        loopedSlides: 20,    // Define o número de slides no loop (pode ser ajustado conforme necessário)
-    });
-}
-
-
-// Carregar os escudos e inicializar o carrossel ao carregar a página
-window.onload = function() {
-    carregarEscudosDosTimes();
-    iniciarCarrossel();
+// Sites oficiais dos times
+const timesSites = {
+    "Flamengo": "https://www.flamengo.com.br",
+    "Palmeiras": "https://www.palmeiras.com.br",
+    "São Paulo": "https://www.saopaulofc.net",
+    "Corinthians": "https://www.corinthians.com.br",
+    "Grêmio": "https://gremio.net",
+    "Internacional": "https://internacional.com.br",
+    "Atlético Mineiro": "https://atletico.com.br",
+    "Cruzeiro": "https://cruzeiro.com.br",
+    "Athletico-Paranaense": "https://www.athletico.com.br",
+    "Vasco da Gama": "https://vasco.com.br",
+    "Fluminense": "https://www.fluminense.com.br",
+    "Botafogo": "https://www.botafogo.com.br",
+    "Bahia": "https://www.esporteclubebahia.com.br",
+    "Fortaleza": "https://www.fortalezaec.net",
+    "Criciúma": "https://criciumaec.com.br",
+    "Bragantino": "https://www.redbullbragantino.com.br",
+    "Juventude": "https://www.instagram.com/ecjuventude/",
+    "Cuiabá": "https://cuiabaesporteclube.com.br",
+    "Atlético de Goiás": "https://atleticogoianiense.com.br",
+    "Vitoria": "https://ecvitoria.com.br"
 };
 
 // Perguntas e regras de decisão
@@ -74,18 +54,19 @@ const perguntas = [
 ];
 
 // Elementos da página
+const timesContainer = document.getElementById('times-container');
 const perguntaEl = document.getElementById("pergunta");
 const resultadoEl = document.getElementById("resultado");  
-const bandeiraEl = document.getElementById("bandeira"); // Imagem da bandeira
+const bandeiraEl = document.getElementById("bandeira");
 const perguntaContainer = document.getElementById("pergunta-container");
 const resultadoContainer = document.getElementById("resultado-container");
 const botaoSim = document.getElementById("sim");
 const botaoNao = document.getElementById("nao");
 const botaoRecomecar = document.getElementById("recomecar");
 
+// Variáveis de controle
 let timesFiltrados = [...times];
 let contadorPerguntas = 0;
-
 // Função que faz as perguntas
 function fazerPergunta() {
     if (contadorPerguntas < perguntas.length && timesFiltrados.length > 1) {
@@ -95,6 +76,54 @@ function fazerPergunta() {
         exibirResultado();
     }
 }
+
+// Função para carregar os escudos dos times no carrossel
+function carregarEscudosDosTimes() {
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+    times.forEach(time => {
+        // Cria o elemento de slide
+        const slide = document.createElement('div');
+        slide.classList.add('swiper-slide');
+
+        // Cria o link
+        const link = document.createElement('a');
+        link.href = timesSites[time];
+        link.target = "_blank"; // Abre em nova aba
+        link.rel = "noopener noreferrer"; // Boas práticas de segurança
+
+        // Cria a imagem
+        const img = document.createElement('img');
+        img.src = `imagens/${time.toLowerCase().replace(/\s+/g, '-')}.png`;
+        img.alt = `Escudo do ${time}`;
+        img.style.cursor = 'pointer';
+
+        // Monta a estrutura
+        link.appendChild(img);
+        slide.appendChild(link);
+        swiperWrapper.appendChild(slide);
+    });
+}
+
+// Função para iniciar o carrossel
+function iniciarCarrossel() {
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 10,  // Exibe 10 times por vez
+        spaceBetween: 1,     // Espaçamento entre os escudos
+        loop: true,          // Ativa o loop contínuo
+        autoplay: {
+            delay: 0,        // Define que não há atraso entre os slides
+            disableOnInteraction: false, // Continua rodando após interação
+        },
+        speed: 2000,         // Define a velocidade de transição (tempo total para passar os slides)
+        loopedSlides: 20,    // Define o número de slides no loop (pode ser ajustado conforme necessário)
+    });
+}
+// Carregar os escudos e inicializar o carrossel ao carregar a página
+window.onload = function() {
+    carregarEscudosDosTimes();
+    iniciarCarrossel();
+};
 
 // Função para tratar as respostas
 function responder(resposta) {
@@ -110,12 +139,12 @@ function responder(resposta) {
     fazerPergunta();
 }
 
-// Função para exibir o resultado e a bandeira
+// Função para exibir o resultado
 function exibirResultado() {
     if (timesFiltrados.length === 1) {
         const time = timesFiltrados[0];
         resultadoEl.textContent = `Seu time é: ${time}!`;
-        bandeiraEl.src = `imagens/${time.toLowerCase().replace(/\s+/g, '-')}.png`; // Usa o nome do time para buscar a imagem
+        bandeiraEl.src = `imagens/${time.toLowerCase().replace(/\s+/g, '-')}.png`;
         bandeiraEl.classList.remove("hidden");
     } else if (timesFiltrados.length > 1) {
         resultadoEl.textContent = `Não consegui adivinhar exatamente, mas pode ser um destes times: ${timesFiltrados.join(", ")}`;
@@ -124,10 +153,11 @@ function exibirResultado() {
         resultadoEl.textContent = "Não consegui encontrar o seu time.";
         bandeiraEl.classList.add("hidden");
     }
+    
     perguntaContainer.classList.add("hidden");
     resultadoContainer.classList.remove("hidden");
 
-    // Adicionar a lógica para a pergunta final (se gostou do jogo)
+    // Adiciona a pergunta final
     const perguntaFinal = document.createElement("p");
     perguntaFinal.textContent = "Gostou do joguinho? Responda!";
     
@@ -135,128 +165,109 @@ function exibirResultado() {
     thumbContainer.classList.add("thumb-container");
 
     const iconeSim = document.createElement("i");
-    iconeSim.classList.add("fas", "fa-thumbs-up", "thumb-icon", "positivo"); // Ícone de polegar para cima (positivo)
+    iconeSim.classList.add("fas", "fa-thumbs-up", "thumb-icon", "positivo");
     
     const iconeNao = document.createElement("i");
-    iconeNao.classList.add("fas", "fa-thumbs-down", "thumb-icon", "negativo"); // Ícone de polegar para baixo (negativo)
+    iconeNao.classList.add("fas", "fa-thumbs-down", "thumb-icon", "negativo");
 
     thumbContainer.appendChild(iconeSim);
     thumbContainer.appendChild(iconeNao);
 
     resultadoContainer.appendChild(perguntaFinal);
     resultadoContainer.appendChild(thumbContainer);
-      
-  // Adicione o botão "Copiar Código do Pix" e a imagem do código Pix
-  const pixCode = '00020126580014BR.GOV.BCB.PIX0136f1179021-16fb-400f-a95c-e2d73180f77652040000530398654049.905802BR5925Paulo Bivar Dourado Barre6009SAO PAULO62140510nt4StWtUDk6304C750';
-  const pixImage = './imagens/qrcode.png'; // Substitua pelo caminho real da sua imagem
-  
-  iconeSim.addEventListener("click", () => {
-    // Atualizar o resultado com a mensagem para o Pix
-    resultadoEl.innerHTML = `Então faça um Pix para me estimular a criar novos projetos.`;
 
-    // Criar um container para o botão e a imagem
-    const pixContainer = document.createElement('div');
-    pixContainer.classList.add('pix-container'); // Adiciona uma classe para o CSS
+    // Eventos para os ícones de feedback
+    iconeSim.addEventListener("click", () => {
+        const pixCode = '00020126580014BR.GOV.BCB.PIX0136f1179021-16fb-400f-a95c-e2d73180f77652040000530398654049.905802BR5925Paulo Bivar Dourado Barre6009SAO PAULO62140510nt4StWtUDk6304C750';
+        resultadoEl.innerHTML = `Então faça um Pix copiando o código ou lendo o Qrcode com seu para me estimular a criar novos projetos.`;
 
-    // Criar o botão "Copiar Código do Pix"
-    const copiarButton = document.createElement('button');
-    copiarButton.textContent = "Copiar Código do Pix";
-    copiarButton.classList.add("button-copiar-pix");
-    copiarButton.onclick = function() {
-        navigator.clipboard.writeText(pixCode).then(() => {
-            alert('Código do Pix copiado para a área de transferência!');
-        }).catch(err => {
-            console.error('Erro ao copiar o código: ', err);
+        const pixContainer = document.createElement('div');
+        pixContainer.classList.add('pix-container');
+
+        const copiarButton = document.createElement('button');
+        copiarButton.textContent = "Copiar Código do Pix";
+        copiarButton.classList.add("button-copiar-pix");
+        copiarButton.onclick = function() {
+            navigator.clipboard.writeText(pixCode)
+                .then(() => alert('Código do Pix copiado para a área de transferência!'))
+                .catch(err => console.error('Erro ao copiar o código: ', err));
+        };
+
+        const imgPix = document.createElement('img');
+        imgPix.src = './imagens/qrcode.png';
+        imgPix.alt = "Código Pix";
+        imgPix.classList.add("qr-code-image");
+
+        pixContainer.appendChild(copiarButton);
+        pixContainer.appendChild(imgPix);
+        resultadoEl.appendChild(pixContainer);
+        bandeiraEl.classList.add("hidden");
+        botaoRecomecar.classList.remove("hidden");
+
+        // Adicionar botão de compartilhar
+        const compartilharEl = document.createElement("button");
+        compartilharEl.id = "compartilhar";
+        compartilharEl.textContent = "Compartilhe o site, por favor";
+        compartilharEl.classList.remove("hidden");
+
+        compartilharEl.addEventListener("click", () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Adivinhe seu time!',
+                    text: 'Descubra qual é o seu time do coração!',
+                    url: 'https://bivardourado.github.io/Seu_Time/',
+                }).then(() => {
+                    console.log('Compartilhado com sucesso!');
+                }).catch((error) => {
+                    console.error('Erro ao compartilhar:', error);
+                });
+            } else {
+                alert('Seu navegador não suporta compartilhamento.');
+            }
         });
-    };
 
-    // Criar a imagem do QR Code
-    const imgPix = document.createElement('img');
-    imgPix.src = pixImage; // Caminho da imagem do QR Code
-    imgPix.alt = "Código Pix";
-    imgPix.classList.add("qr-code-image"); // Classe CSS para definir o tamanho e posicionamento
-
-    // Adicionar o botão e a imagem ao container
-    pixContainer.appendChild(copiarButton);
-    pixContainer.appendChild(imgPix);
-
-    // Adicionar o container ao elemento de resultado
-    resultadoEl.appendChild(pixContainer);
-
-    // Esconder o escudo do time, se estiver visível
-    bandeiraEl.classList.add("hidden");
-
-    // Mostrar o botão "Recomeçar"
-    botaoRecomecar.classList.remove("hidden");
-
-    // Adicionar o botão de compartilhar
-    const compartilharEl = document.createElement("button");
-    compartilharEl.id = "compartilhar";
-    compartilharEl.textContent = "Compartilhe o site, por favor";
-    compartilharEl.classList.remove("hidden");
-
-    // Configurar a lógica de compartilhamento
-    compartilharEl.addEventListener("click", () => {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Adivinhe seu time!',
-                text: 'Descubra qual é o seu time do coração!',
-                url: 'https://bivardourado.github.io/Seu_Time/',
-            }).then(() => {
-                console.log('Compartilhado com sucesso!');
-            }).catch((error) => {
-                console.error('Erro ao compartilhar:', error);
-            });
-        } else {
-            alert('Seu navegador não suporta compartilhamento.');
-        }
+        resultadoContainer.appendChild(compartilharEl);
+        perguntaFinal.remove();
+        thumbContainer.remove();
     });
 
-    // Adicionar o botão de compartilhar ao container de resultados
-    resultadoContainer.appendChild(compartilharEl);
-
-    // Remover a pergunta final e os ícones de "Sim" e "Não"
-    perguntaFinal.remove();
-    thumbContainer.remove();
-});
-
-    // Evento para o ícone "Não"
     iconeNao.addEventListener("click", () => {
         resultadoEl.textContent = "Que pena que você não gostou!";
         bandeiraEl.classList.add("hidden");
-          // Mostrar o botão "Recomeçar"
-          botaoRecomecar.classList.remove("hidden");
+        botaoRecomecar.classList.remove("hidden");
         perguntaFinal.remove();
         thumbContainer.remove();
     });
 }
 
-// Inicia o jogo
-fazerPergunta();
- // Esconder o botão de recomeçar
- botaoRecomecar.classList.add("hidden"); // Adicione a classe "hidden" novamente
-
 // Função para reiniciar o jogo
-
 function reiniciarJogo() {
     timesFiltrados = [...times];
     contadorPerguntas = 0;
     resultadoEl.textContent = "";
-    bandeiraEl.src = ""; // Reseta a imagem da bandeira
+    bandeiraEl.src = "";
     bandeiraEl.classList.add("hidden");
     resultadoContainer.classList.add("hidden");
     perguntaContainer.classList.remove("hidden");
 
-    // Remova o botão de compartilhar, se existir
     const compartilharEl = document.getElementById("compartilhar");
     if (compartilharEl) {
-        compartilharEl.remove(); // Remove o botão do DOM
+        compartilharEl.remove();
     }
     botaoRecomecar.classList.add("hidden");
     location.reload();
 }
 
-// Adiciona eventos aos botões
+// Inicialização quando a página carrega
+window.onload = function() {
+    carregarEscudosDosTimes();
+    iniciarCarrossel();
+    fazerPergunta();
+    botaoRecomecar.classList.add("hidden");
+
+};
+
+// Eventos dos botões
 botaoSim.addEventListener("click", () => responder('sim'));
 botaoNao.addEventListener("click", () => responder('nao'));
 botaoRecomecar.addEventListener("click", reiniciarJogo);

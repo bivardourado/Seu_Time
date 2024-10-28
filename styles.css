@@ -35,7 +35,7 @@ header{
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9fbfd;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -44,7 +44,7 @@ body {
 
 /* Contêiner principal */
 .p-container {
-    background: #f6f8f7;
+    background: #fff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
