@@ -202,12 +202,12 @@ h1 {
 }
 
 .swiper-slide img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
     background-color: #ffffff;
     border-radius: 50%;
-    padding: 8px;
+    padding: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     transition: all 0.3s ease;
 }
