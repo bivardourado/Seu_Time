@@ -189,13 +189,12 @@ h1 {
 
 /* Card do Carrossel */
 .carousel-card {
-    width: 90%;
-    max-width: 900px;
-    margin: 60px auto 10px auto;
+    width: calc(100% - 40px);
+    margin: 55px 20px 15px 20px;
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Carrossel no topo */
