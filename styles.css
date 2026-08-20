@@ -198,32 +198,6 @@ h1 {
     position: relative;
 }
 
-/* Efeito côncavo nas extremidades */
-.swiper-container::before,
-.swiper-container::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 80px;
-    height: 200px;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    background-attachment: fixed;
-    background-size: cover;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.swiper-container::before {
-    left: -40px;
-}
-
-.swiper-container::after {
-    right: -40px;
-}
 
 .swiper-slide {
     display: flex;
