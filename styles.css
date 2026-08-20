@@ -206,7 +206,7 @@ h1 {
     height: 100px;
     object-fit: contain;
     background-color: transparent;
-    border-radius: 50%;
+    border-radius: 0;
     padding: 0;
     mix-blend-mode: lighten;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
