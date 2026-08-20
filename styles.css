@@ -199,16 +199,17 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
 }
 
 .swiper-slide img {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    background-color: transparent;
+    background: none;
     border-radius: 0;
     padding: 0;
-    mix-blend-mode: lighten;
+    mix-blend-mode: multiply;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
     transition: all 0.3s ease;
 }
