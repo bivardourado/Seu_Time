@@ -193,30 +193,32 @@ h1 {
     margin-top: 80px;
     margin-bottom: 10px;
     overflow: visible;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
+    background: #ffffff;
 }
 
 .swiper-slide img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
     background: none;
     border-radius: 0;
-    padding: 0;
-    mix-blend-mode: multiply;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+    padding: 5px;
+    mix-blend-mode: normal;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     transition: all 0.3s ease;
 }
 
 .swiper-slide img:hover {
     transform: scale(1.2) translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.3));
 }
 
 /* Rodapé Glassmorphism */
