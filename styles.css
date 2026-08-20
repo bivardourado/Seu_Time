@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 60px;
+    padding-bottom: 120px; /* Mais espaço para o footer */
 }
 
 /* Cabeçalho Glassmorphism */
@@ -74,7 +74,7 @@ header {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     width: 90%;
     max-width: 500px;
-    margin: 20px auto;
+    margin: 20px auto 60px auto;
     text-align: center;
     transition: transform 0.3s ease;
 }
