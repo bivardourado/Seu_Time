@@ -2,7 +2,9 @@
 
 /* Reset básico */
 body, html {
-    overflow-x: hidden;
+    overflow: hidden; /* Remove rolagem completamente */
+    height: 100vh;
+    width: 100vw;
 }
 
 * {
@@ -20,9 +22,7 @@ body {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow-y: hidden; /* Sem scroll */
-    padding-bottom: 60px;
+    padding-bottom: 0; /* Remove padding extra que causava scroll */
 }
 
 /* Cabeçalho Glassmorphism */
