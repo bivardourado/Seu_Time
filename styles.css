@@ -204,11 +204,12 @@ h1 {
 .swiper-slide img {
     width: 100px;
     height: 100px;
-    object-fit: cover;
-    background-color: #ffffff;
+    object-fit: contain;
+    background-color: transparent;
     border-radius: 50%;
     padding: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
     transition: all 0.3s ease;
 }
 
