@@ -1,418 +1,371 @@
-/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
+/* Reset básico */
 body, html {
-    overflow-x: hidden; /* Evitar rolagem horizontal no documento */
+    overflow-x: hidden;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
 
-/* Estilos da página */
-
-header{
-    background-color: #218838;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-   
-    border-bottom: 1px solid #ccc; /* Borda inferior */
-    position: fixed; /* Fixa o cabeçalho no topo */
-    top: 0; /* Coloca no topo */
-    left: 0; /* Alinha à esquerda */
-    right: 0; /* Alinha à direita */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-   
-
-}
-.header-link {
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: white; /* Se desejar, adicione uma cor ao texto do link */
-}
-
+/* Fundo Premium (Dark Mode) */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 60px; /* Espaço para o rodapé */
+    padding-bottom: 60px;
 }
 
-/* Contêiner principal */
-.p-container {
-    background: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto; /* Centraliza o contêiner com margem superior e inferior */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Faz o carrossel ocupar 100% da largura */
-    max-width: 500px; /* Se desejar, pode definir uma largura máxima */
-    margin: 20px auto; /* Centraliza o carrossel */
-}
-.publi {
-    background: #1406df;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto; /* Centraliza o contêiner com margem superior e inferior */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #FFFFFF;
-}
-h1 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 2rem;
-}
-
-#pergunta {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.buttons {
+/* Cabeçalho Glassmorphism */
+header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
-.btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+.header-link {
+    text-decoration: none;
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
 }
 
-#sim {
-    background-color: #28a745;
-    color: #fff;
-    
+.header-link:hover {
+    color: #86efac;
+    text-shadow: 0 0 15px rgba(134, 239, 172, 0.8);
 }
 
-#sim:hover {
-    background-color: #218838;
-
-}
-
-#nao {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-#nao:hover {
-    background-color: #c82333;
-}
-
-#resultado {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.thumb-container {
-    font-size: 2rem;
-    margin: 10px;
-    cursor: pointer;
-    color: #007bff;
-    transition: transform 0.2s, color 0.2s;
-    /* Adicione a linha abaixo para subir os ícones */
-    margin-top: 0px; /* Ajuste este valor conforme necessário */
-}
-
-#recomecar, #compartilhar {
-    background-color: #007bff;
-    color: #fff;
+/* Conteúdo principal - Cartão Glassmorphism */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
     margin-top: 10px;
 }
 
-
-.button-copiar-pix {
-    background-color: #4CAF50; /* Cor de fundo verde */
-    color: white;              /* Cor do texto branca */
-    padding: 10px 20px;        /* Espaçamento interno */
-    border: none;              /* Remove borda */
-    border-radius: 5px;        /* Bordas arredondadas */
-    cursor: pointer;           /* Cursor de ponteiro */
-    font-size: 16px;           /* Tamanho do texto */
-    transition: background-color 0.3s; /* Transição suave */
-
-    /* Efeito de hover */
-}
-.button-copiar-pix:hover {
-    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+.p-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-#recomecar:hover, #compartilhar:hover {
-    background-color: #0069d9;
-}
-
-.hidden {
-    display: none;
-}
-
-#bandeira {
-    max-width: 100px;
-    margin-top: 20px;
-}
-
-#times-container {
-    display: flex;
-    justify-content: center;
-   
-    margin: 20px 0;
-}
-
-#times-container img {
-    width: 60px;
-    height: auto;
-    margin: 0 10px;
-    transition: transform 0.3s;
-}
-
-#times-container img:hover {
-    transform: scale(1.2);
+h1 {
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 #pergunta-container {
-    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+#pergunta {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+    color: #e2e8f0;
+}
+
+/* Botões modernos */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#sim {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+#sim:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+}
+
+#nao {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+#nao:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
+}
+
+#recomecar {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
     margin-top: 20px;
+}
+#recomecar:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+/* Resultado */
+#resultado {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #4ade80;
+    text-shadow: 0 0 15px rgba(74, 222, 128, 0.5);
+}
+
+#bandeira {
+    max-width: 150px;
+    height: 150px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#bandeira:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.hidden {
+    display: none !important;
 }
 
 #resultado-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-top: 20px;
 }
 
-#resultado-container p {
-    margin-bottom: 20px;
+/* Animação para trocar de pergunta */
+.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
 }
-/* CSS */
-/* CSS */
-.pix-container {
-    display: flex;
-    flex-direction: column; /* Exibe os elementos na vertical */
-    align-items: center;    /* Centraliza o conteúdo no container */
-    gap: 10px;              /* Espaçamento entre o botão e a imagem */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.qr-code-image {
-    width: 150px; /* Ajuste conforme necessário */
-    height: auto; /* Mantém a proporção */
-}
-
-.qr-code-image {
-    width: 150px;      /* Define a largura da imagem */
-    height: auto;      /* Mantém a proporção da imagem */
-    margin-top: 10px;  /* Espaçamento superior para separar do botão */
-}
-
-/* Estilos para o carrossel de times */
-.swiper-container .swiper-pagination-progressbar {
-    display: none; /* Esconde a barra de progresso */
-}
+/* Carrossel no topo */
 .swiper-container {
     width: 100%;
-    height: 120px;
-    margin: 40px 0;
+    height: 100px;
+    margin-top: 80px; /* Evita ficar por baixo do header fixo */
+    margin-bottom: 10px;
 }
 
 .swiper-slide {
-    
+    display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 
 .swiper-slide img {
-    width: 80px;
-    height: auto;
-    transition: transform 0.3s;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
 }
 
 .swiper-slide img:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 }
 
-/* Estilos para o rodapé */
-.footer-container {
-    display: flex;
-    justify-content: flex-end; /* Alinha os ícones à direita */
-    gap: 20px;
-    padding: 0px; /* Diminui o espaço do rodapé */
-}
-
+/* Rodapé Glassmorphism */
 footer {
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #f1f1f1;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
 }
 
-/* Ícones de redes sociais */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
 .footer-container a {
-    color: #333;
-    font-size: 2rem;
-    transition: color 0.3s ease;
+    color: #cbd5e1;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .footer-container a:hover {
-    color: #0077b5; /* Cor ao passar o mouse */
-}
-/* Ícones de polegar */
-.thumb-icon {
-    font-size: 2rem;
-    margin: 20px;
-    cursor: pointer;
-    color: #007bff;
-    transition: transform 0.2s, color 0.2s;
+    color: #fff;
+    transform: translateY(-3px);
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
-.thumb-icon:hover {
-    transform: scale(1.2);
-}
-
-.thumb-icon.positivo:hover {
-    color: #28a745;
-}
-
-.thumb-icon.negativo:hover {
-    color: #dc3545;
-}
-
-/* Botão Compartilhar */
-#compartilhar {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#compartilhar:hover {
-    background-color: #45a049;
-}
-
-
-
-/* Media Queries */
-
-/* Tablets */
+/* Responsividade */
 @media (max-width: 768px) {
-
     .swiper-container {
-        height: 100px; /* Reduz a altura do carrossel para tablets */
-        padding: 0px;
+        height: 80px;
     }
-
     .swiper-slide img {
-        width: 70px; /* Ajusta o tamanho da imagem para tablets */
-        padding: 10px;
+        width: 60px;
+        height: 60px;
     }
-
-
-    .p-container {
-        padding: 20px;
-        max-width: 90%;
-    }
-    
-    .footer-container {
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .thumb-icon {
-        font-size: 3rem;
-        margin: 15px;
-    }
-    
     h1 {
         font-size: 1.8rem;
     }
-    
-    #pergunta {
-        font-size: 1.1rem;
-    }
-    
-    .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
+    .p-container {
+        padding: 30px 20px;
     }
 }
 
-/* Smartphones */
 @media (max-width: 480px) {
-
-    .swiper-container {
-        height: 80px; /* Reduz a altura do carrossel para smartphones */
-        
-    }
-
-    .swiper-slide img {
-        width: 50px; /* Ajusta o tamanho da imagem para smartphones */
-        padding: 10px;
-    }
     .buttons {
         flex-direction: column;
-        gap: 10px;
         width: 100%;
     }
-    
     .btn {
         width: 100%;
     }
-
-    #times-container img {
-        width: 40px;
-        margin: 5px;
-    }
-    
-    .thumb-container {
-        gap: 20px;
-    }
-
-    .thumb-icon {
-        font-size: 2.5rem;
-        margin: 10px;
-    }
-
     h1 {
         font-size: 1.5rem;
     }
-    
     #pergunta {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
-
+    #resultado {
+        font-size: 1.5rem;
+    }
     #bandeira {
-        max-width: 80px;
+        max-width: 120px;
+        height: 120px;
     }
 }
+/* Feedback UI */
+.thumb-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
 
+.thumb-icon {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #e2e8f0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
 
+.thumb-icon:hover {
+    transform: scale(1.3) translateY(-3px);
+}
 
+.thumb-icon.positivo:hover {
+    color: #4ade80;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
 
+.thumb-icon.negativo:hover {
+    color: #ef4444;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
 
+/* Pix Container */
+.pix-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+}
 
+.button-copiar-pix {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
+.button-copiar-pix:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+}
 
+.qr-code-image {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#compartilhar {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#compartilhar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}

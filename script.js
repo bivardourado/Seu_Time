@@ -1,10 +1,10 @@
-// Lista dos times
+// Lista dos times (Série A 2026)
 const times = [
     "Flamengo", "Palmeiras", "São Paulo", "Corinthians", 
     "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", 
     "Athletico-Paranaense", "Vasco da Gama", "Fluminense", 
-    "Botafogo", "Bahia", "Fortaleza", "Criciúma", "Bragantino", 
-    "Juventude", "Cuiabá", "Atlético de Goiás", "Vitoria"
+    "Botafogo", "Bahia", "Bragantino", "Vitoria",
+    "Coritiba", "Chapecoense", "Mirassol", "Remo", "Santos"
 ];
 
 // Sites oficiais dos times
@@ -22,35 +22,35 @@ const timesSites = {
     "Fluminense": "https://www.fluminense.com.br",
     "Botafogo": "https://www.botafogo.com.br",
     "Bahia": "https://www.esporteclubebahia.com.br",
-    "Fortaleza": "https://www.fortalezaec.net",
-    "Criciúma": "https://criciumaec.com.br",
     "Bragantino": "https://www.redbullbragantino.com.br",
-    "Juventude": "https://www.instagram.com/ecjuventude/",
-    "Cuiabá": "https://cuiabaesporteclube.com.br",
-    "Atlético de Goiás": "https://atleticogoianiense.com.br",
-    "Vitoria": "https://ecvitoria.com.br"
+    "Vitoria": "https://ecvitoria.com.br",
+    "Coritiba": "https://coritiba.com.br",
+    "Chapecoense": "https://chapecoense.com",
+    "Mirassol": "https://www.mirassolfc.com.br",
+    "Remo": "https://www.clubedoremo.com.br",
+    "Santos": "https://www.santosfc.com.br"
 };
 
 // Perguntas e regras de decisão
 const perguntas = [
-    { pergunta: "Seu time ganhou a Libertadores nos últimos 5 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense"], nao: [] },
-    { pergunta: "Seu time é de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians", "Bragantino"], nao: [] },
-    { pergunta: "Sua mascote é um peixe", sim: ["Cuiabá" ], nao: [] },
-    { pergunta: "Seu time já foi rebaixado?", sim: [ "Vitoria", "Bahia", "Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Fortaleza", "Criciúma", "Juventude", "Bragantino", "Atlético de Goiás"], nao: [] },
-    { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Cruzeiro","Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama"], nao: [] },
-    { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio", "Fortaleza"], nao: [] },
+    { pergunta: "Seu time ganhou a Libertadores nos últimos 15 anos?", sim: ["Flamengo", "Palmeiras", "Fluminense", "Santos", "Atlético Mineiro", "Corinthians", "Grêmio"], nao: [] },
+    { pergunta: "Seu time é do estado de São Paulo?", sim: ["São Paulo", "Palmeiras", "Corinthians", "Bragantino", "Santos", "Mirassol"], nao: [] },
+    { pergunta: "O mascote do seu time é um peixe, ou ligado ao mar?", sim: ["Santos"], nao: [] },
+    { pergunta: "Seu time já foi rebaixado para a Série B?", sim: [ "Vitoria", "Bahia", "Athletico-Paranaense", "Fluminense", "Cruzeiro", "Corinthians", "Vasco da Gama", "Internacional", "Grêmio", "Botafogo", "Atlético Mineiro", "Bragantino", "Palmeiras", "Coritiba", "Chapecoense", "Remo", "Santos"], nao: [] },
+    { pergunta: "Seu time tem 4 ou mais títulos do Brasileirão?", sim: ["Cruzeiro", "Flamengo", "Palmeiras", "Corinthians", "São Paulo", "Vasco da Gama", "Fluminense", "Santos"], nao: [] },
+    { pergunta: "Seu time é conhecido por ter uma camisa tricolor?", sim: ["Fluminense", "São Paulo", "Bahia", "Grêmio"], nao: [] },
     { pergunta: "Seu time é do Rio de Janeiro?", sim: ["Flamengo", "Fluminense", "Vasco da Gama", "Botafogo"], nao: [] },
-    { pergunta: "Seu time tem um estádio próprio?", sim: [ "Vitoria","Palmeiras","Cuiabá","Juventude","Atlético de Goiás", "Athletico-Paranaense", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo","Criciúma", "Internacional"], nao: [] },
-    { pergunta: "Seu time é de Minas?", sim: ["Atlético Mineiro", "Cruzeiro"], nao: [] },
-    { pergunta: "Seu time é Baiano?", sim: ["Vitoria"], nao: [] },
-    { pergunta: "Seu time tem um mascote que é um leão?", sim: ["Fortaleza"], nao: [] },
+    { pergunta: "Seu time tem um estádio próprio?", sim: [ "Vitoria", "Palmeiras", "Athletico-Paranaense", "São Paulo", "Atlético Mineiro", "Corinthians", "Vasco da Gama", "Grêmio", "Botafogo", "Internacional", "Bragantino", "Santos", "Coritiba", "Chapecoense", "Mirassol", "Remo"], nao: [] },
+    { pergunta: "Seu time é de Minas Gerais?", sim: ["Atlético Mineiro", "Cruzeiro"], nao: [] },
+    { pergunta: "Seu time é Baiano?", sim: ["Vitoria", "Bahia"], nao: [] },
+    { pergunta: "O mascote do seu time é um Leão?", sim: ["Vitoria", "Remo", "Mirassol"], nao: [] },
     { pergunta: "Seu time completou 100 anos em 2024?", sim: ["Athletico-Paranaense"], nao: [] },
-    { pergunta: "Seu time está na primeira divisão atualmente?", sim:  [ "Flamengo", "Palmeiras", "São Paulo", "Corinthians",  "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro",  "Athletico-Paranaense", "Vasco da Gama", "Fluminense",  "Botafogo", "Bahia", "Fortaleza", "Criciúma", "Bragantino",  "Juventude", "Cuiabá", "Atlético de Goiás"], nao: [] },
+    { pergunta: "Seu time é do Sul do Brasil?", sim: ["Grêmio", "Internacional", "Athletico-Paranaense", "Coritiba", "Chapecoense"], nao: [] },
     { pergunta: "Seu time tem a maior torcida do Brasil?", sim: ["Flamengo"], nao: [] },
-    { pergunta: "Seu time é de Santa Catarina?", sim: ["Criciúma"], nao: [] },
-    { pergunta: "Seu time tem um mascote que é um Bragantino?", sim: ["Bragantino"], nao: [] },
-    { pergunta: "Seu time é conhecido por suas cores verde e branco?", sim: ["Juventude"], nao: [] },
-    { pergunta: "É uma das maiores forças do Centro-Oeste", sim: ["Cuiabá", "Atlético de Goiás"], nao: [] },
+    { pergunta: "Seu time é do Norte do Brasil?", sim: ["Remo"], nao: [] },
+    { pergunta: "Seu time é patrocinado por uma marca de energéticos?", sim: ["Bragantino"], nao: [] },
+    { pergunta: "Seu time é conhecido por suas cores verde e branco?", sim: ["Palmeiras", "Coritiba", "Chapecoense"], nao: [] },
+    { pergunta: "Seu time joga em sua cidade capital?", sim: ["Flamengo", "Palmeiras", "São Paulo", "Corinthians", "Grêmio", "Internacional", "Atlético Mineiro", "Cruzeiro", "Athletico-Paranaense", "Vasco da Gama", "Fluminense", "Botafogo", "Bahia", "Vitoria", "Coritiba", "Remo"], nao: [] },
 ];
 
 // Elementos da página
@@ -71,7 +71,21 @@ let contadorPerguntas = 0;
 function fazerPergunta() {
     if (contadorPerguntas < perguntas.length && timesFiltrados.length > 1) {
         const perguntaAtual = perguntas[contadorPerguntas];
-        perguntaEl.textContent = perguntaAtual.pergunta;
+        
+        // Aplica o fade-out
+        perguntaContainer.classList.add('fade-out');
+        
+        setTimeout(() => {
+            perguntaEl.textContent = perguntaAtual.pergunta;
+            
+            // Remove fade-out e aplica fade-in
+            perguntaContainer.classList.remove('fade-out');
+            perguntaContainer.classList.add('fade-in');
+            
+            setTimeout(() => {
+                perguntaContainer.classList.remove('fade-in');
+            }, 300);
+        }, 300);
     } else {
         exibirResultado();
     }
@@ -108,15 +122,35 @@ function carregarEscudosDosTimes() {
 // Função para iniciar o carrossel
 function iniciarCarrossel() {
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 10,  // Exibe 10 times por vez
-        spaceBetween: 1,     // Espaçamento entre os escudos
-        loop: true,          // Ativa o loop contínuo
+        loop: true,
         autoplay: {
-            delay: 0,        // Define que não há atraso entre os slides
-            disableOnInteraction: false, // Continua rodando após interação
+            delay: 0,
+            disableOnInteraction: false,
         },
-        speed: 2000,         // Define a velocidade de transição (tempo total para passar os slides)
-        loopedSlides: 20,    // Define o número de slides no loop (pode ser ajustado conforme necessário)
+        speed: 2000,
+        loopedSlides: 20,
+        breakpoints: {
+            // Quando a tela tiver 320px ou mais (smartphones menores)
+            320: {
+                slidesPerView: 4,
+                spaceBetween: 10
+            },
+            // Quando a tela tiver 480px ou mais (smartphones maiores)
+            480: {
+                slidesPerView: 5,
+                spaceBetween: 15
+            },
+            // Quando a tela tiver 768px ou mais (tablets)
+            768: {
+                slidesPerView: 7,
+                spaceBetween: 20
+            },
+            // Quando a tela tiver 1024px ou mais (computadores)
+            1024: {
+                slidesPerView: 10,
+                spaceBetween: 20
+            }
+        }
     });
 }
 // Carregar os escudos e inicializar o carrossel ao carregar a página
