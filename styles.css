@@ -190,7 +190,7 @@ h1 {
 .swiper-container {
     width: 100%;
     height: 120px;
-    margin-top: 80px; /* Evita ficar por baixo do header fixo */
+    margin-top: 100px; /* Mais espaço abaixo do header fixo */
     margin-bottom: 10px;
     overflow: visible;
 }
