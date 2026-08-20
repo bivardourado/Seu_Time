@@ -263,9 +263,14 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    .carousel-card {
+        width: calc(100% - 20px);
+        margin: 55px 10px 10px 10px;
+        border-radius: 12px;
+    }
     .swiper-container {
-        height: 95px;
-        overflow: visible;
+        height: 70px;
+        overflow: hidden;
     }
     .swiper-slide img {
         width: 60px;
