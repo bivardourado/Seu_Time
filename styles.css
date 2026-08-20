@@ -195,6 +195,30 @@ h1 {
     margin-bottom: 5px;
     overflow: visible;
     background-color: #ffffff;
+    position: relative;
+}
+
+/* Efeito côncavo nas extremidades */
+.swiper-container::before,
+.swiper-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 200px;
+    background: linear-gradient(160deg, #0f2027, #203a43 50%, #2c5364);
+    border-radius: 50%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.swiper-container::before {
+    left: -40px;
+}
+
+.swiper-container::after {
+    right: -40px;
 }
 
 .swiper-slide {
